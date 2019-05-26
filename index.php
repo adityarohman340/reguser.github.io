@@ -45,9 +45,9 @@
     <!-- Backend : Php code -->
     <?php
         $host = "registeration.database.windows.net";
-        $user = "aditya340";
+        $user = "aditya34";
         $pass = "A@d1ty4&A";
-        $db = "registeration";
+        $db = "Reguser";
 
         try {
             $conn = new PDO("sqlsrv:server = $host; Database = $db", $user, $pass);
@@ -65,7 +65,7 @@
                 $age = $_POST['Umur'];
                 $date = date("Y-m-d");
                 // insert data
-                $sql_insert = "INSERT INTO Registeruser (ID, Nama, Email, Profesi, Umur, date) VALUES (?,?,?,?,?,?)";
+                $sql_insert = "INSERT INTO Reguser (ID, Nama, Email, Profesi, Umur, date) VALUES (?,?,?,?,?,?)";
                 $stmt = $conn->prepare($sql_insert);
                 $stmt->bindValue(1, $id);
                 $stmt->bindValue(2, $name);
@@ -81,7 +81,7 @@
             echo "<h3>Data telah tersimpan</h3>";
         } else if (isset($_GET['load_data'])) {
             try {
-                $sql_select = "SELECT * FROM Registeruser";
+                $sql_select = "SELECT * FROM Reguser";
                 $stmt = $conn->query($sql_select);
                 $registerants = $stmt->fetchAll();
 
