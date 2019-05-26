@@ -57,15 +57,13 @@
                 $email = $_POST['Email'];
                 $profession = $_POST['Profesi'];
                 $age = $_POST['Umur'];
-                $date = date("Y-m-d");
                 // insert data
-                $sql_insert = "INSERT INTO Registeration (Nama, Email, Profesi, Umur, date) VALUES (?,?,?,?,?)";
+                $sql_insert = "INSERT INTO Registeration (Nama, Email, Profesi, Umur) VALUES (?,?,?,?,?)";
                 $stmt = $conn->prepare($sql_insert);
                 $stmt->bindValue(1, $name);
                 $stmt->bindValue(2, $email);
                 $stmt->bindValue(3, $profession);
                 $stmt->bindValue(4, $age);
-                $stmt->bindValue(5, $date);
                 $stmt->execute();
             } catch(Exception $e) {
                 echo "Failed: ".$e;
@@ -84,14 +82,12 @@
                     echo "<tr><th>Nama</th>";
                     echo "<th>Email</th>";
                     echo "<th>Profesi</th>";
-                    echo "<th>Umur</th>";
-                    echo "<th>Date</th></tr></thead><tbody>";
+                    echo "<th>Umur</th></tr></thead><tbody>";
                     foreach($registerants as $registerant) {
                         echo "<tr><td>".$registerant['Nama']."</td>";
                         echo "<td>".$registerant['Email']."</td>";
                         echo "<td>".$registerant['Profesi']."</td>";
-                        echo "<td>".$registerant['Umur']."</td>";
-                        echo "<td>".$registerant['date']."</td></tr>";
+                        echo "<td>".$registerant['Umur']."</td></tr>";
                     }
                     echo "</tbody></table>";
                 } else {
