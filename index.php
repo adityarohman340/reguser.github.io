@@ -31,6 +31,8 @@
             </div>
             <!-- the button -->
             <input type="submit" class="btn" name="submit" id="submit" value="Register">
+        </form>
+        <form class="form" action="index.php" method="GET">
             <input type="submit" class="btn" name="load_data" id="load_data" value="Tampilkan Data">
         </form>
     </div>
