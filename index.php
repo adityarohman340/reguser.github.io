@@ -12,7 +12,7 @@
 <body>
     <div class="user">
         <h3>Form Registerasi User</h3>
-        <form class="form">
+        <form class="form" action="index.php" method="POST">
             <!-- textinput 1: Nama -->
             <div class="form__group">
                 <input type="text" placeholder="Nama" class="form__input" name="Nama" id="nama"/>
