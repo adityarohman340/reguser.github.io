@@ -77,7 +77,7 @@
                 $registerants = $stmt->fetchAll();
 
                 if (count($registerants) > 0) {
-                    echo "<h2 style='color: white; text-align: center;'>User yang telah terdaftar:</h2>";
+                    echo "<h2 style='color: white; text-align: center; text-transform: uppercase;'>User yang telah terdaftar:</h2>";
                     echo "<table class='table table-hover'><thead>";
                     echo "<tr><th>Nama</th>";
                     echo "<th>Email</th>";
