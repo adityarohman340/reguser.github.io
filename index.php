@@ -13,6 +13,11 @@
     <div class="user">
         <h3>Form Registerasi User</h3>
         <form class="form" action="index.php" method="POST">
+            <!-- textinput 0: ID -->
+            <div class="form__group">
+                <input type="text" placeholder="ID" class="form__input" name="ID" id="ID"/>
+            </div>
+
             <!-- textinput 1: Nama -->
             <div class="form__group">
                 <input type="text" placeholder="Nama" class="form__input" name="Nama" id="nama"/>
@@ -53,17 +58,19 @@
 
         if (isset($_POST['submit'])) {
             try {
+                $id = $_POST['ID'];
                 $name = $_POST['Nama'];
                 $email = $_POST['Email'];
                 $profession = $_POST['Profesi'];
                 $age = $_POST['Umur'];
                 // insert data
-                $sql_insert = "INSERT INTO Registeration (Nama, Email, Profesi, Umur) VALUES (?,?,?,?)";
+                $sql_insert = "INSERT INTO Registeration (ID, Nama, Email, Profesi, Umur) VALUES (?,?,?,?,?)";
                 $stmt = $conn->prepare($sql_insert);
-                $stmt->bindValue(1, $name);
-                $stmt->bindValue(2, $email);
-                $stmt->bindValue(3, $profession);
-                $stmt->bindValue(4, $age);
+                $stmt->bindValue(1, $id);
+                $stmt->bindValue(2, $name);
+                $stmt->bindValue(3, $email);
+                $stmt->bindValue(4, $profession);
+                $stmt->bindValue(5, $age);
                 $stmt->execute();
             } catch(Exception $e) {
                 echo "Failed: ".$e;
