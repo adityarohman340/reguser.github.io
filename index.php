@@ -58,7 +58,7 @@
                 $profession = $_POST['Profesi'];
                 $age = $_POST['Umur'];
                 // insert data
-                $sql_insert = "INSERT INTO Registeration (Nama, Email, Profesi, Umur) VALUES (?,?,?,?,?)";
+                $sql_insert = "INSERT INTO Registeration (Nama, Email, Profesi, Umur) VALUES (?,?,?,?)";
                 $stmt = $conn->prepare($sql_insert);
                 $stmt->bindValue(1, $name);
                 $stmt->bindValue(2, $email);
