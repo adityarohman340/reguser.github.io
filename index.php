@@ -39,7 +39,7 @@
         $host = "registeration.database.windows.net";
         $user = "aditya340";
         $pass = "A@d1ty4&A";
-        $db = "registeration";
+        $db = "Registeration";
 
         try {
             $conn = new PDO("sqlsrv:server = $host; Database = $db", $user, $pass);
@@ -67,7 +67,7 @@
             } catch(Exception $e) {
                 echo "Failed: ".$e;
             }
-
+            // if success : the dialog will be appear
             echo "<h3>Data telah tersimpan</h3>";
         } else if (isset($_GET['load_data'])) {
             try {
@@ -77,20 +77,20 @@
 
                 if (count($registerants) > 0) {
                     echo "<h2>User yang telah terdaftar:</h2>";
-                    echo "<table>";
+                    echo "<table class='table table-hover'><thead>";
                     echo "<tr><th>Nama</th>";
                     echo "<th>Email</th>";
                     echo "<th>Profesi</th>";
                     echo "<th>Umur</th>";
-                    echo "<th>Date</th></tr>";
+                    echo "<th>Date</th></tr></thead><tbody>";
                     foreach($registerants as $registerant) {
-                        echo "<tr><td>".$registerant['Nama']."</td>?";
+                        echo "<tr><td>".$registerant['Nama']."</td>";
                         echo "<td>".$registerant['Email']."</td>";
                         echo "<td>".$registerant['Profesi']."</td>";
                         echo "<td>".$registerant['Umur']."</td>";
                         echo "<td>".$registerant['date']."</td></tr>";
                     }
-                    echo "</table>";
+                    echo "</tbody></table>";
                 } else {
                     echo "<h3>Tidak ada user yang terdaftar</h3>";
                 }
