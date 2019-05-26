@@ -6,6 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="bootstrap-4.3.1-dist/bootstrap-4.3.1-dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
     <title>Registeration Form</title>
 </head>
 <body>
@@ -76,7 +77,7 @@
                 $registerants = $stmt->fetchAll();
 
                 if (count($registerants) > 0) {
-                    echo "<h2 style='color: white; text-align: center; font-family: 'Montserrat', sans-serif;'>User yang telah terdaftar:</h2>";
+                    echo "<h2 style='color: white; text-align: center;'>User yang telah terdaftar:</h2>";
                     echo "<table class='table table-hover'><thead>";
                     echo "<tr><th>Nama</th>";
                     echo "<th>Email</th>";
