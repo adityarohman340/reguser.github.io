@@ -65,7 +65,7 @@
                 $age = $_POST['Umur'];
                 $date = date("Y-m-d");
                 // insert data
-                $sql_insert = "INSERT INTO Reguser (ID, Nama, Email, Profesi, Umur, date) VALUES (?,?,?,?,?,?)";
+                $sql_insert = "INSERT INTO Reguser (ID, Nama, Email, Profesi, Umur, date) VALUES (?,?,?,?,?)";
                 $stmt = $conn->prepare($sql_insert);
                 $stmt->bindValue(1, $id);
                 $stmt->bindValue(2, $name);
