@@ -44,7 +44,7 @@
 
     <!-- Backend : Php code -->
     <?php
-        $host = "registeration.database.windows.net";
+        $host = "registeruser.database.windows.net";
         $user = "aditya34";
         $pass = "A@d1ty4&A";
         $db = "registeruser";
