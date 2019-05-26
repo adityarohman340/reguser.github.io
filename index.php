@@ -56,7 +56,7 @@
                 $age = $_POST['Umur'];
                 $date = date("Y-m-d");
                 // insert data
-                $sql_insert = "INSERT INTO Registeration (name, email, profession, age, date) VALUES (?,?,?,?)";
+                $sql_insert = "INSERT INTO Registeration (Nama, Email, Profesi, Umur, date) VALUES (?,?,?,?)";
                 $stmt = $conn->prepare($sql_insert);
                 $stmt->bindValue(1, $name);
                 $stmt->bindValue(2, $email);
@@ -69,7 +69,7 @@
             }
 
             echo "<h3>Data telah tersimpan</h3>";
-        } else if (isset($_POST['load_data'])) {
+        } else if (isset($_GET['load_data'])) {
             try {
                 $sql_select = "SELECT * FROM Registeration";
                 $stmt = $conn->query($sql_select);
